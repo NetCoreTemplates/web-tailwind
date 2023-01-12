@@ -59,7 +59,7 @@
 
 <script type="module">
 import { JsonServiceClient, $1, on } from 'https://unpkg.com/@servicestack/client/dist/servicestack-client.mjs'
-import { Hello } from '/types/mjs'
+import { Hello } from '/js/dtos.mjs'
 
 on('#txtName', {
     keyup(el) {
@@ -72,7 +72,7 @@ on('#txtName', {
 })
 </script>
 
-<div id="content" class="mt-8 mx-auto prose lg:prose-xl" style="max-width:110ch"></div>
+<div id="content" class="my-8 pb-8 mx-auto prose lg:prose-xl" style="max-width:110ch"></div>
 
 <template id="docs">
 ## View in API Explorer
@@ -81,17 +81,42 @@ on('#txtName', {
  - [View API Details](/ui/Hello?tab=details)
  - [Browse API Source Code](/ui/Hello?tab=code)
 
+### Tailwind Configuration
+
+This empty web template is configured with a stand-alone [Tailwind CSS CLI](https://tailwindcss.com/docs/installation) 
+installation with a modified **tailwind.input.css** that embeds [@tailwindcss/forms](https://github.com/tailwindlabs/tailwindcss-forms)
+and [@tailwindcss/aspect-ratio](https://github.com/tailwindlabs/tailwindcss-aspect-ratio) plugins to avoid needing 
+any **node_modules** dependencies.
+
+The [@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin) plugin is contained in `css/typography.css` which
+can be used to markup unstyled HTML elements which is ideal to use with Markdown content like this.
+
+### Running Tailwind during development
+
+Run tailwind in a new terminal during development to auto update your **app.css**:
+
+```bash
+$ npm run ui:dev
+```
+
+For an optimal development experience run it together with `dotnet watch` to preview changes on each save.
+
+Or if using JetBrains Rider, **ui:dev** can be run directly from Rider in **package.json**:
+
+![](https://raw.githubusercontent.com/ServiceStack/docs/master/docs/images/servicestack-reference/scripts-tailwind.png)
+
 ### Using JsonServiceClient in Web Pages
 
-Easiest way to call your APIs in a webpage is to include your App's built-in JavaScript DTOs 
+Easiest way to call your APIs is to include your App's built-in JavaScript DTOs 
 [/types/mjs](/types/mjs) and [@servicestack/client](https://docs.servicestack.net/servicestack-client-umd) module:
 
 ```html
-<input type="text" id="txtName">
-<div id="result"></div>
+&lt;input type="text" id="txtName"&gt;
+&lt;div id="result"&gt;&lt;/div&gt;
 ```
 
-```js
+```html
+&lt;script type="module"&gt;
 import { JsonServiceClient, $1, on } from 'https://unpkg.com/@servicestack/client/dist/servicestack-client.mjs'
 import { Hello } from '/types/mjs'
 
@@ -104,6 +129,22 @@ on('#txtName', {
             })
     }
 })
+&lt;/script&gt;
+```
+
+For better IDE intelli-sense during development, save the annotated Typed DTOs to disk with:
+
+```bash
+$ npm run dtos
+```
+    
+That can be referenced instead to enable IDE's static analysis when calling Typed APIs from JavaScript:
+
+```html
+&lt;script type="module"&gt;
+import { Hello } from '/js/dtos.mjs'
+client.api(new Hello({ name }))
+&lt;/script&gt;
 ```
 </template>
 
@@ -119,6 +160,7 @@ function decode(html) {
 document.querySelector('#content').innerHTML = marked.parse(decode(document.querySelector('#docs').innerHTML))
 hljs.highlightAll()
 </script>
+                            <p class="my-20">&nbsp;</p>
 
                         </div>
                     </div>

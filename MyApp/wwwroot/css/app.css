@@ -746,6 +746,10 @@ select{
   left: 0;
 }
 
+.static {
+  position: static;
+}
+
 .relative {
   position: relative;
 }
@@ -778,9 +782,19 @@ select{
   margin-bottom: 0.5rem;
 }
 
+.my-8 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
 .mx-2 {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
+}
+
+.my-20 {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 
 .ml-2 {
@@ -936,6 +950,10 @@ select{
 
 .pr-3 {
   padding-right: 0.75rem;
+}
+
+.pb-8 {
+  padding-bottom: 2rem;
 }
 
 .text-center {

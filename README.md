@@ -2,7 +2,7 @@
 
 .NET 6.0 Empty Website configured with Tailwind CSS
 
-[![](https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/web.png)](http://web-tailwind.web-templates.io/)
+[![](https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/web-tailwind.png)](http://web-tailwind.web-templates.io/)
 
 > Browse [source code](https://github.com/NetCoreTemplates/web), view live demo [web-tailwind.web-templates.io](http://web-tailwind.web-templates.io) and install with [dotnet-new](https://docs.servicestack.net/dotnet-new):
 
