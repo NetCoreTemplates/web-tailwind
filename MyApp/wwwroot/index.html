@@ -84,12 +84,11 @@ on('#txtName', {
 ### Tailwind Configuration
 
 This empty web template is configured with a stand-alone [Tailwind CSS CLI](https://tailwindcss.com/docs/installation) 
-installation with a modified **tailwind.input.css** that embeds [@tailwindcss/forms](https://github.com/tailwindlabs/tailwindcss-forms)
-and [@tailwindcss/aspect-ratio](https://github.com/tailwindlabs/tailwindcss-aspect-ratio) plugins to avoid needing 
-any **node_modules** dependencies.
+installation with a modified **tailwind.input.css** that includes [@tailwindcss/forms](https://github.com/tailwindlabs/tailwindcss-forms)
+and [@tailwindcss/aspect-ratio](https://github.com/tailwindlabs/tailwindcss-aspect-ratio) plugins so that no **node_modules** dependencies are needed.
 
-The [@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin) plugin is contained in `css/typography.css` which
-can be used to markup unstyled HTML elements which is ideal to use with Markdown content like this.
+The [@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin) plugin css is contained in `css/typography.css` which
+applies a beautiful default style to unstyled HTML, ideal for Markdown content like this.
 
 ### Running Tailwind during development
 
@@ -107,8 +106,9 @@ Or if using JetBrains Rider, **ui:dev** can be run directly from Rider in **pack
 
 ### Using JsonServiceClient in Web Pages
 
-Easiest way to call your APIs is to include your App's built-in JavaScript DTOs 
-[/types/mjs](/types/mjs) and [@servicestack/client](https://docs.servicestack.net/servicestack-client-umd) module:
+Easiest way to call APIs is to use [@servicestack/client](https://docs.servicestack.net/javascript-client) with
+the built-in [/types/mjs](/types/mjs) which returns your APIs annotated typed JS DTOs that can be used immediately 
+(i.e. without any build steps):
 
 ```html
 &lt;input type="text" id="txtName"&gt;
@@ -137,8 +137,8 @@ For better IDE intelli-sense during development, save the annotated Typed DTOs t
 ```bash
 $ npm run dtos
 ```
-    
-That can be referenced instead to enable IDE's static analysis when calling Typed APIs from JavaScript:
+
+That enables IDE static analysis when calling Typed APIs from JavaScript:
 
 ```html
 &lt;script type="module"&gt;
