@@ -62,12 +62,10 @@ import { JsonServiceClient, $1, on } from 'https://unpkg.com/@servicestack/clien
 import { Hello } from '/js/dtos.mjs'
 
 on('#txtName', {
-    keyup(el) {
+    async keyup(el) {
         const client = new JsonServiceClient()
-        client.get(new Hello({ name:el.target.value }))
-            .then(r => {
-                $1('#result').innerHTML = r.result
-            })
+        const api = await client.api(new Hello({ name:el.target.value }))
+        $1('#result').innerHTML = api.response.result
     }
 })
 </script>
@@ -121,12 +119,10 @@ import { JsonServiceClient, $1, on } from 'https://unpkg.com/@servicestack/clien
 import { Hello } from '/types/mjs'
 
 on('#txtName', {
-    keyup(el) {
+    async keyup(el) {
         const client = new JsonServiceClient()
-        client.get(new Hello({ name:el.target.value }))
-            .then(r => {
-                $1('#result').innerHTML = r.result
-            })
+        const api = await client.api(new Hello({ name:el.target.value }))
+        $1('#result').innerHTML = api.response.result
     }
 })
 &lt;/script&gt;
