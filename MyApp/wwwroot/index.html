@@ -58,7 +58,7 @@
 </div>
 
 <script type="module">
-import { JsonApiClient, $1, on } from 'https://unpkg.com/@servicestack/client@2.0.1/dist/servicestack-client.mjs'
+import { JsonApiClient, $1, on } from 'https://unpkg.com/@servicestack/client@2/dist/servicestack-client.mjs'
 import { Hello } from '/js/dtos.mjs'
 
 on('#txtName', {
@@ -115,7 +115,7 @@ the built-in [/types/mjs](/types/mjs) which returns your APIs annotated typed JS
 
 ```html
 &lt;script type="module"&gt;
-import { JsonApiClient, $1, on } from 'https://unpkg.com/@servicestack/client/dist/servicestack-client.mjs'
+import { JsonApiClient, $1, on } from 'https://unpkg.com/@servicestack/client@2/dist/servicestack-client.mjs'
 import { Hello } from '/types/mjs'
 
 on('#txtName', {
@@ -149,7 +149,7 @@ client.api(new Hello({ name }))
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
 function decode(html) {
-    var txt = document.createElement("textarea")
+    const txt = document.createElement("textarea")
     txt.innerHTML = html
     return txt.value
 }    
