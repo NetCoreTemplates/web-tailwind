@@ -1,6 +1,6 @@
 /* Options:
-Date: 2023-01-12 17:39:14
-Version: 6.51
+Date: 2023-02-09 17:00:13
+Version: 6.60
 Tip: To override a DTO option, remove "//" prefix before updating
 BaseUrl: https://localhost:5001
 
@@ -15,17 +15,17 @@ BaseUrl: https://localhost:5001
 "use strict";
 export class HelloResponse {
     /** @param {{result?:string}} [init] */
-    constructor(init) { Object.assign(this, init); }
+    constructor(init) { Object.assign(this, init) }
     /** @type {string} */
     result;
 }
 export class Hello {
     /** @param {{name?:string}} [init] */
-    constructor(init) { Object.assign(this, init); }
+    constructor(init) { Object.assign(this, init) }
     /** @type {string} */
     name;
-    getTypeName() { return 'Hello'; };
-    getMethod() { return 'POST'; };
-    createResponse() { return new HelloResponse(); };
+    getTypeName() { return 'Hello' }
+    getMethod() { return 'POST' }
+    createResponse() { return new HelloResponse() }
 }
 
