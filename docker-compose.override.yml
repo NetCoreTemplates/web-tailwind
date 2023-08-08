@@ -1,0 +1,11 @@
+version: "3.9"
+services:
+  app:
+    build: .
+    ports:
+      - "5000:80"
+    volumes:
+      - app-mydb:/app/App_Data
+
+volumes:
+  app-mydb:
