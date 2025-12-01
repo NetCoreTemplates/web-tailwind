@@ -1,20 +1,19 @@
 # web-tailwind
 
-.NET 8.0 Empty Website configured with Tailwind CSS
+.NET 10.0 Empty Website configured with Tailwind CSS
 
 ![](https://raw.githubusercontent.com/ServiceStack/Assets/master/csharp-templates/web-tailwind.png)
 
-> Browse [source code](https://github.com/NetCoreTemplates/web) and install with [dotnet-new](https://docs.servicestack.net/dotnet-new):
+> Browse [source code](https://github.com/NetCoreTemplates/web):
 
-    $ dotnet tool install -g x
+```bash
+npx create-net web-tailwind ProjectName
+```
 
-    $ x new web-tailwind ProjectName
+## Jumpstart with Copilot
 
-Alternatively write new project files directly into an empty repository, using the Directory Name as the ProjectName:
+Instantly [scaffold a new App with this template](https://github.com/new?template_name=web-tailwind&template_owner=NetCoreTemplates) using GitHub Copilot, just describe the features you want and watch Copilot build it!
 
-    $ git clone https://github.com/<User>/<ProjectName>.git
-    $ cd <ProjectName>
-    $ x new web-tailwind
 
 ### Update Server TypeScript DTOs
 
